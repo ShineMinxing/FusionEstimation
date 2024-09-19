@@ -36,7 +36,7 @@ after cd src/fusion_estimator
     roscore
     rosrun rqt_multiplot rqt_multiplot
     roslaunch fusion_estimator FusionEstimator.launch
-    rosbag play DemoData/smx_c_1.bag
+    rosbag play smx_c_1.bag
     ```
 
 ## Quick Modify
