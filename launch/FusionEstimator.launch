@@ -1,0 +1,7 @@
+<launch>
+    <!-- Load the YAML configuration file -->
+    <rosparam command="load" file="$(find fusion_estimator)/cfg/fusion_estimator_config.yaml" />
+
+    <!-- Launch the node -->
+    <node name="fusion_estimator_operating_node" pkg="fusion_estimator" type="fusion_estimator_node" output="screen" />
+</launch>
