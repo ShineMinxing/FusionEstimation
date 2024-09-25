@@ -226,8 +226,8 @@ namespace DataFusion
 
     ROS_nh_CurrentTime = SignalSourceData.header.stamp;
     //Get latest FeetEffort data, in the order of rightfront leftfront leftback rightback legs
-    LatestFeetEffort = SignalSourceData.foot_force[JointDataOrder / 3];
-    // LatestFeetEffort = SignalSourceData.contacts[JointDataOrder / 3];
+    // LatestFeetEffort = SignalSourceData.foot_force[JointDataOrder / 3];
+    LatestFeetEffort = SignalSourceData.contacts[JointDataOrder / 3];
 
     //Get Joint Angle data, in the order of rightfront leftfront leftback rightback legs
     for (i = 0; i < 3; i++)
