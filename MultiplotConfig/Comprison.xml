@@ -137,11 +137,11 @@
                                         <relative_minimum>-1000</relative_minimum>
                                         <type>0</type>
                                     </scale>
-                                    <topic>/FusionEstimatedState</topic>
-                                    <type>ocs2_quadruped_msgs/RobotState</type>
+                                    <topic>/FusionEstimator</topic>
+                                    <type>fusion_estimator/FusionEstimatorTest</type>
                                 </x_axis>
                                 <y_axis>
-                                    <field>x/3</field>
+                                    <field>EstimatedXYZ/0</field>
                                     <field_type>0</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -150,8 +150,8 @@
                                         <relative_minimum>-1000</relative_minimum>
                                         <type>0</type>
                                     </scale>
-                                    <topic>/FusionEstimatedState</topic>
-                                    <type>ocs2_quadruped_msgs/RobotState</type>
+                                    <topic>/FusionEstimator</topic>
+                                    <type>fusion_estimator/FusionEstimatorTest</type>
                                 </y_axis>
                             </axes>
                             <color>
@@ -266,7 +266,7 @@
                                     <type>fusion_estimator/FusionEstimatorTest</type>
                                 </x_axis>
                                 <y_axis>
-                                    <field>DataCheckA/2</field>
+                                    <field>DataCheckA/0</field>
                                     <field_type>0</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -299,7 +299,7 @@
                                 <type>0</type>
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>Raw Z position</title>
+                            <title>Raw X position</title>
                         </curve_0>
                         <curve_1>
                             <axes>
@@ -317,7 +317,7 @@
                                     <type>fusion_estimator/FusionEstimatorTest</type>
                                 </x_axis>
                                 <y_axis>
-                                    <field>DataCheckC/2</field>
+                                    <field>DataCheckC/0</field>
                                     <field_type>0</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -350,14 +350,65 @@
                                 <type>0</type>
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>CKF Foot Z position</title>
+                            <title>CKF Foot X position</title>
                         </curve_1>
+                        <curve_2>
+                            <axes>
+                                <x_axis>
+                                    <field>header/stamp</field>
+                                    <field_type>0</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/robot_description/anymal/low_state</topic>
+                                    <type>ocs2_quadruped_msgs/LowState</type>
+                                </x_axis>
+                                <y_axis>
+                                    <field>foot_force/0</field>
+                                    <field_type>0</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/robot_description/anymal/low_state</topic>
+                                    <type>ocs2_quadruped_msgs/LowState</type>
+                                </y_axis>
+                            </axes>
+                            <color>
+                                <custom_color>#00ff00</custom_color>
+                                <type>1</type>
+                            </color>
+                            <data>
+                                <circular_buffer_capacity>1000</circular_buffer_capacity>
+                                <time_frame_length>10</time_frame_length>
+                                <type>0</type>
+                            </data>
+                            <style>
+                                <lines_interpolate>false</lines_interpolate>
+                                <pen_style>1</pen_style>
+                                <pen_width>1</pen_width>
+                                <render_antialias>false</render_antialias>
+                                <steps_invert>false</steps_invert>
+                                <sticks_baseline>0</sticks_baseline>
+                                <sticks_orientation>2</sticks_orientation>
+                                <type>0</type>
+                            </style>
+                            <subscriber_queue_size>100</subscriber_queue_size>
+                            <title>Foot Force</title>
+                        </curve_2>
                     </curves>
                     <legend>
                         <visible>true</visible>
                     </legend>
                     <plot_rate>30</plot_rate>
-                    <title>Foot Z position</title>
+                    <title>Foot X position</title>
                 </column_1>
             </row_0>
             <row_1>
@@ -482,57 +533,6 @@
                         <curve_2>
                             <axes>
                                 <x_axis>
-                                    <field>stamp</field>
-                                    <field_type>0</field_type>
-                                    <scale>
-                                        <absolute_maximum>1000</absolute_maximum>
-                                        <absolute_minimum>0</absolute_minimum>
-                                        <relative_maximum>0</relative_maximum>
-                                        <relative_minimum>-1000</relative_minimum>
-                                        <type>0</type>
-                                    </scale>
-                                    <topic>/FusionEstimatedState</topic>
-                                    <type>ocs2_quadruped_msgs/RobotState</type>
-                                </x_axis>
-                                <y_axis>
-                                    <field>x/4</field>
-                                    <field_type>0</field_type>
-                                    <scale>
-                                        <absolute_maximum>1000</absolute_maximum>
-                                        <absolute_minimum>0</absolute_minimum>
-                                        <relative_maximum>0</relative_maximum>
-                                        <relative_minimum>-1000</relative_minimum>
-                                        <type>0</type>
-                                    </scale>
-                                    <topic>/FusionEstimatedState</topic>
-                                    <type>ocs2_quadruped_msgs/RobotState</type>
-                                </y_axis>
-                            </axes>
-                            <color>
-                                <custom_color>#0055ff</custom_color>
-                                <type>1</type>
-                            </color>
-                            <data>
-                                <circular_buffer_capacity>1000</circular_buffer_capacity>
-                                <time_frame_length>10</time_frame_length>
-                                <type>0</type>
-                            </data>
-                            <style>
-                                <lines_interpolate>false</lines_interpolate>
-                                <pen_style>1</pen_style>
-                                <pen_width>1</pen_width>
-                                <render_antialias>false</render_antialias>
-                                <steps_invert>false</steps_invert>
-                                <sticks_baseline>0</sticks_baseline>
-                                <sticks_orientation>2</sticks_orientation>
-                                <type>0</type>
-                            </style>
-                            <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>Fusion Estimator</title>
-                        </curve_2>
-                        <curve_3>
-                            <axes>
-                                <x_axis>
                                     <field>header/stamp</field>
                                     <field_type>0</field_type>
                                     <scale>
@@ -580,6 +580,57 @@
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
                             <title>Capture</title>
+                        </curve_2>
+                        <curve_3>
+                            <axes>
+                                <x_axis>
+                                    <field>stamp</field>
+                                    <field_type>0</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/FusionEstimator</topic>
+                                    <type>fusion_estimator/FusionEstimatorTest</type>
+                                </x_axis>
+                                <y_axis>
+                                    <field>EstimatedXYZ/1</field>
+                                    <field_type>0</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/FusionEstimator</topic>
+                                    <type>fusion_estimator/FusionEstimatorTest</type>
+                                </y_axis>
+                            </axes>
+                            <color>
+                                <custom_color>#0055ff</custom_color>
+                                <type>1</type>
+                            </color>
+                            <data>
+                                <circular_buffer_capacity>1000</circular_buffer_capacity>
+                                <time_frame_length>10</time_frame_length>
+                                <type>0</type>
+                            </data>
+                            <style>
+                                <lines_interpolate>false</lines_interpolate>
+                                <pen_style>1</pen_style>
+                                <pen_width>1</pen_width>
+                                <render_antialias>false</render_antialias>
+                                <steps_invert>false</steps_invert>
+                                <sticks_baseline>0</sticks_baseline>
+                                <sticks_orientation>2</sticks_orientation>
+                                <type>0</type>
+                            </style>
+                            <subscriber_queue_size>100</subscriber_queue_size>
+                            <title>Fusion Estimator</title>
                         </curve_3>
                     </curves>
                     <legend>
@@ -620,7 +671,7 @@
                                     <type>fusion_estimator/FusionEstimatorTest</type>
                                 </x_axis>
                                 <y_axis>
-                                    <field>DataCheckA/0</field>
+                                    <field>EstimatedXYZ/3</field>
                                     <field_type>0</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -653,7 +704,7 @@
                                 <type>0</type>
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>Raw X position</title>
+                            <title>X Velocity</title>
                         </curve_0>
                         <curve_1>
                             <axes>
@@ -671,7 +722,7 @@
                                     <type>fusion_estimator/FusionEstimatorTest</type>
                                 </x_axis>
                                 <y_axis>
-                                    <field>DataCheckC/0</field>
+                                    <field>EstimatedXYZ/4</field>
                                     <field_type>0</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -704,14 +755,65 @@
                                 <type>0</type>
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>CKF Foot X position</title>
+                            <title>Y Velocity</title>
                         </curve_1>
+                        <curve_2>
+                            <axes>
+                                <x_axis>
+                                    <field>stamp</field>
+                                    <field_type>0</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/FusionEstimator</topic>
+                                    <type>fusion_estimator/FusionEstimatorTest</type>
+                                </x_axis>
+                                <y_axis>
+                                    <field>EstimatedXYZ/5</field>
+                                    <field_type>0</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/FusionEstimator</topic>
+                                    <type>fusion_estimator/FusionEstimatorTest</type>
+                                </y_axis>
+                            </axes>
+                            <color>
+                                <custom_color>#ff0000</custom_color>
+                                <type>1</type>
+                            </color>
+                            <data>
+                                <circular_buffer_capacity>1000</circular_buffer_capacity>
+                                <time_frame_length>10</time_frame_length>
+                                <type>0</type>
+                            </data>
+                            <style>
+                                <lines_interpolate>false</lines_interpolate>
+                                <pen_style>1</pen_style>
+                                <pen_width>1</pen_width>
+                                <render_antialias>false</render_antialias>
+                                <steps_invert>false</steps_invert>
+                                <sticks_baseline>0</sticks_baseline>
+                                <sticks_orientation>2</sticks_orientation>
+                                <type>0</type>
+                            </style>
+                            <subscriber_queue_size>100</subscriber_queue_size>
+                            <title>Z Velocity</title>
+                        </curve_2>
                     </curves>
                     <legend>
                         <visible>true</visible>
                     </legend>
                     <plot_rate>30</plot_rate>
-                    <title>Foot X position</title>
+                    <title>X Velocity</title>
                 </column_1>
             </row_1>
             <row_2>
@@ -836,57 +938,6 @@
                         <curve_2>
                             <axes>
                                 <x_axis>
-                                    <field>stamp</field>
-                                    <field_type>0</field_type>
-                                    <scale>
-                                        <absolute_maximum>1000</absolute_maximum>
-                                        <absolute_minimum>0</absolute_minimum>
-                                        <relative_maximum>0</relative_maximum>
-                                        <relative_minimum>-1000</relative_minimum>
-                                        <type>0</type>
-                                    </scale>
-                                    <topic>/FusionEstimatedState</topic>
-                                    <type>ocs2_quadruped_msgs/RobotState</type>
-                                </x_axis>
-                                <y_axis>
-                                    <field>x/5</field>
-                                    <field_type>0</field_type>
-                                    <scale>
-                                        <absolute_maximum>1000</absolute_maximum>
-                                        <absolute_minimum>0</absolute_minimum>
-                                        <relative_maximum>0</relative_maximum>
-                                        <relative_minimum>-1000</relative_minimum>
-                                        <type>0</type>
-                                    </scale>
-                                    <topic>/FusionEstimatedState</topic>
-                                    <type>ocs2_quadruped_msgs/RobotState</type>
-                                </y_axis>
-                            </axes>
-                            <color>
-                                <custom_color>#0055ff</custom_color>
-                                <type>1</type>
-                            </color>
-                            <data>
-                                <circular_buffer_capacity>1000</circular_buffer_capacity>
-                                <time_frame_length>10</time_frame_length>
-                                <type>0</type>
-                            </data>
-                            <style>
-                                <lines_interpolate>false</lines_interpolate>
-                                <pen_style>1</pen_style>
-                                <pen_width>1</pen_width>
-                                <render_antialias>false</render_antialias>
-                                <steps_invert>false</steps_invert>
-                                <sticks_baseline>0</sticks_baseline>
-                                <sticks_orientation>2</sticks_orientation>
-                                <type>0</type>
-                            </style>
-                            <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>Fusion Estimator</title>
-                        </curve_2>
-                        <curve_3>
-                            <axes>
-                                <x_axis>
                                     <field>header/stamp</field>
                                     <field_type>0</field_type>
                                     <scale>
@@ -934,6 +985,57 @@
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
                             <title>Capture</title>
+                        </curve_2>
+                        <curve_3>
+                            <axes>
+                                <x_axis>
+                                    <field>stamp</field>
+                                    <field_type>0</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/FusionEstimator</topic>
+                                    <type>fusion_estimator/FusionEstimatorTest</type>
+                                </x_axis>
+                                <y_axis>
+                                    <field>EstimatedXYZ/2</field>
+                                    <field_type>0</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/FusionEstimator</topic>
+                                    <type>fusion_estimator/FusionEstimatorTest</type>
+                                </y_axis>
+                            </axes>
+                            <color>
+                                <custom_color>#0055ff</custom_color>
+                                <type>1</type>
+                            </color>
+                            <data>
+                                <circular_buffer_capacity>1000</circular_buffer_capacity>
+                                <time_frame_length>10</time_frame_length>
+                                <type>0</type>
+                            </data>
+                            <style>
+                                <lines_interpolate>false</lines_interpolate>
+                                <pen_style>1</pen_style>
+                                <pen_width>1</pen_width>
+                                <render_antialias>false</render_antialias>
+                                <steps_invert>false</steps_invert>
+                                <sticks_baseline>0</sticks_baseline>
+                                <sticks_orientation>2</sticks_orientation>
+                                <type>0</type>
+                            </style>
+                            <subscriber_queue_size>100</subscriber_queue_size>
+                            <title>Fusion Estimator</title>
                         </curve_3>
                     </curves>
                     <legend>
@@ -974,7 +1076,7 @@
                                     <type>fusion_estimator/FusionEstimatorTest</type>
                                 </x_axis>
                                 <y_axis>
-                                    <field>DataCheckB/0</field>
+                                    <field>DataCheckB/2</field>
                                     <field_type>0</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -1007,7 +1109,7 @@
                                 <type>0</type>
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>Raw X velocity</title>
+                            <title>Raw Z velocity</title>
                         </curve_0>
                         <curve_1>
                             <axes>
@@ -1025,7 +1127,7 @@
                                     <type>fusion_estimator/FusionEstimatorTest</type>
                                 </x_axis>
                                 <y_axis>
-                                    <field>DataCheckD/0</field>
+                                    <field>DataCheckD/2</field>
                                     <field_type>0</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -1058,14 +1160,14 @@
                                 <type>0</type>
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>CKF Foot X velocity</title>
+                            <title>CKF Foot Z velocity</title>
                         </curve_1>
                     </curves>
                     <legend>
                         <visible>true</visible>
                     </legend>
                     <plot_rate>30</plot_rate>
-                    <title>Foot X velocity</title>
+                    <title>Foot Z velocity</title>
                 </column_1>
             </row_2>
         </plots>
