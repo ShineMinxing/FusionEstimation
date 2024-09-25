@@ -16,9 +16,8 @@ Email： 401435318@qq.com
 
 #include <fusion_estimator/FusionEstimatorTest.h>
 #define FusionEstimator_Package_FusionEstimatorTest fusion_estimator::FusionEstimatorTest
-// #include <ocs2_quadruped_msgs/RobotState.h>
-#include <fusion_estimator/RobotState.h>
-#define FusionEstimator_Package_RobotState fusion_estimator::RobotState
+#include <ocs2_quadruped_msgs/RobotState.h>
+#define FusionEstimator_Package_RobotState ocs2_quadruped_msgs::RobotState
 
 namespace DataFusion
 {

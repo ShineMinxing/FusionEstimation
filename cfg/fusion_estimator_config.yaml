@@ -5,8 +5,8 @@ fusion_estimator:
   Initial_State_Roll:  0
   Initial_State_Pitch: 0
   Initial_State_Yaw:   -0.13
-  urdf_file_name: "urdf/aliengo_generated_edited.urdf"
-  urdf_file_package: "fusion_estimator"
+  urdf_file_name: "resources/unitree_aliengo/urdf/aliengo_generated_edited.urdf"
+  urdf_file_package: "ocs2_robotic_assets"
   urdf_BaseName: "base"
   urdf_HipJointName: "_HAA"
   urdf_HipLengthName: "_HFE"

@@ -10,9 +10,8 @@ Email： 401435318@qq.com
 #include <urdf/model.h>
 #include "FusionEstimation.h"
 
-// #include <ocs2_quadruped_msgs/LowState.h>
-#include <fusion_estimator/LowState.h>
-#define FusionEstimator_Package_LowState fusion_estimator::LowState
+#include <ocs2_quadruped_msgs/LowState.h>
+#define FusionEstimator_Package_LowState ocs2_quadruped_msgs::LowState
 #include <nav_msgs/Odometry.h>
 #define FusionEstimator_Package_Odometry nav_msgs::Odometry
 
@@ -104,7 +103,6 @@ namespace DataFusion
       }
 
       double FootHipCorrectPar[6] = {-0.9, 1, 1, -1, 1, 1};  //xyz0_Data and xyz1_Data will seperately multiply these number to resize
-      // Gazebo Simulation {-0.9, 1, 1, -1, 1, 1};
 
       void OffsetReconfig(double Data[16]) override;
 
@@ -146,24 +144,6 @@ namespace DataFusion
       void Hip_FootHipPosition();
       void Hip_LegJoint2HipFoot(double *Angle, double *AngleVelocity, double *HipFootPosition, double *HipFootVelocity, double SideSign, double Par_HipLength, double Par_ThighLength, double Par_CalfLength, double Par_FootLength);
       void Hip_FootFallPositionCorrect();
-
-      // Cubature Kalman Estimator
-      bool CKF6d_IsInitialized = false;
-      bool CKF6d_Enable = true;
-      const int CKF6d_StateDimension = 6;
-      const int CKF6d_ObserDimension = 6;
-      double Est_LegPar_hip, Est_LegPar_thigh, Est_LegPar_calf, Est_LegPar_foot;
-      double CKF6d_LegPar_hip, CKF6d_LegPar_thigh, CKF6d_LegPar_calf, CKF6d_LegPar_foot;
-      Eigen::MatrixXd CKF6d_CPoints0, CKF6d_CPoints1, CKF6d_CPoints2, CKF6d_SqrtP, CKF6d_State, CKF6d_Observation, CKF6d_ObserError;
-      Eigen::MatrixXd CKF6d_Ppre, CKF6d_Pzz, CKF6d_Pxz, CKF6d_KlmGain;
-      Eigen::MatrixXd CKF6d_X11, CKF6d_XX1, CKF6d_Z11, CKF6d_Output;
-      Eigen::LLT<Eigen::MatrixXd> SqrtPinfo;
-      Eigen::MatrixXd CKF6d_ParZ, CKF6d_ParX, CKF6d_ParP, CKF6d_ParQ, CKF6d_ParR;
-      double CKF6d_Parameter[3] = {0,0,1}, CKF6d_InitialState[6] = {0,0,-0.4,0,0,0};
-      void Hip_CKF6dFunEstimation(Eigen::MatrixXd& Observation, Eigen::MatrixXd& Output, Eigen::MatrixXd& State, Eigen::MatrixXd& Matrix_P, Eigen::MatrixXd& Matrix_Q, Eigen::MatrixXd& Matrix_R, double (&Parameter)[3]);
-      void Hip_CKF6dFunInitiation();
-      void Hip_CKF6dFunTransition(Eigen::MatrixXd& Input, Eigen::MatrixXd& Output, double(&Parameter)[3]);
-      void Hip_CKF6dFunObservation(Eigen::MatrixXd& Input, Eigen::MatrixXd& Output, double(&Parameter)[3]);
   };
 
   class SensorHipRF : public SensorHip

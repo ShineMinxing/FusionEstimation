@@ -13,7 +13,7 @@ find_package(catkin REQUIRED
         nav_msgs
         std_msgs
         sensor_msgs
-        # ocs2_quadruped_msgs
+        ocs2_quadruped_msgs
         message_generation
         dynamic_reconfigure
         )
@@ -27,9 +27,6 @@ generate_dynamic_reconfigure_options(
 add_message_files(
   FILES
   FusionEstimatorTest.msg
-  LowState.msg
-  RobotState.msg
-  JointState.msg
 )
 
 generate_messages(
