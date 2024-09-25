@@ -227,6 +227,7 @@ namespace DataFusion
     ROS_nh_CurrentTime = SignalSourceData.header.stamp;
     //Get latest FeetEffort data, in the order of rightfront leftfront leftback rightback legs
     LatestFeetEffort = SignalSourceData.foot_force[JointDataOrder / 3];
+    // LatestFeetEffort = SignalSourceData.contacts[JointDataOrder / 3];
 
     //Get Joint Angle data, in the order of rightfront leftfront leftback rightback legs
     for (i = 0; i < 3; i++)
@@ -348,9 +349,6 @@ namespace DataFusion
 
       Hip_CKF6dFunEstimation(CKF6d_ParZ, CKF6d_Output, CKF6d_ParX, CKF6d_ParP, CKF6d_ParQ, CKF6d_ParR, CKF6d_Parameter);
 
-      xyz0_Data[0] = CKF6d_Output(0 , 0);
-      xyz0_Data[1] = CKF6d_Output(1 , 0);
-      xyz0_Data[2] = CKF6d_Output(2 , 0);
       xyz1_Data[0] = CKF6d_Output(3 , 0);
       xyz1_Data[1] = CKF6d_Output(4 , 0);
       xyz1_Data[2] = CKF6d_Output(5 , 0);
@@ -383,14 +381,14 @@ namespace DataFusion
         }
       }
     }
-    
+
     ROS_MsgTest.DataCheckC[(SensorErrorCode-201)*3+0] = xyz0_Data[0];
     ROS_MsgTest.DataCheckC[(SensorErrorCode-201)*3+1] = xyz0_Data[1];
     ROS_MsgTest.DataCheckC[(SensorErrorCode-201)*3+2] = xyz0_Data[2];
     ROS_MsgTest.DataCheckD[(SensorErrorCode-201)*3+0] = xyz1_Data[0];
     ROS_MsgTest.DataCheckD[(SensorErrorCode-201)*3+1] = xyz1_Data[1];
     ROS_MsgTest.DataCheckD[(SensorErrorCode-201)*3+2] = xyz1_Data[2];
-    
+
     xyz0_Data[0] = FootHipCorrectPar[0]*xyz0_Data[0];
     xyz0_Data[1] = FootHipCorrectPar[1]*xyz0_Data[1];
     xyz0_Data[2] = FootHipCorrectPar[2]*xyz0_Data[2];
@@ -777,7 +775,7 @@ namespace DataFusion
     // Temp[3] = sin(AngleA) * Temp[1];
     // FootfallPositionRecord[0] = FootfallPositionRecord[0] + (abs(Temp[2]) - abs(Est_InputX[0])) / abs(Est_InputX[0]) * Est_InputX[0];
     // FootfallPositionRecord[1] = FootfallPositionRecord[1] + (abs(Temp[3]) - abs(Est_InputY[0])) / abs(Est_InputY[0]) * Est_InputY[0];
-    // std::cout <<"One footfall position is modified to "<< FootfallPositionRecord[0] << " " << FootfallPositionRecord[1] << " " << FootfallPositionRecord[2]  << std::endl;
+    std::cout <<"The corrected Footfall position on Z is substracted: "<< Zdifference << std::endl;
 
   }
 

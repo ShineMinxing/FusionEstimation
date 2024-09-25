@@ -28,7 +28,7 @@ namespace DataFusion
         ROS_nh_FusionEstimator.getParam("fusion_estimator/Sensor_Signal_Source_1", SignalSourceTopic);
         ROS_sub_FusionEstimatorIMU = ROS_nh_FusionEstimator.subscribe<FusionEstimator_Package_LowState>(SignalSourceTopic, 1, boost::bind(&SensorIMU::IMUCallback, this, _1));
         ROS_INFO("IMU subscribe from: %s", SignalSourceTopic.c_str());
-        
+
         SensorErrorCode = 101;
         xyz_Available[2] = 1;
         rpy_Available[0] = 1;
@@ -134,7 +134,7 @@ namespace DataFusion
       int JointDataOrder, FeetNumber;
       double LatestFeetEffort;
       double LatestJointAngle[3], LatestJointVelocity[3];
-      double FootEffortThreshold = 20;
+      double FootEffortThreshold = 1;
       bool FootIsOnGround = true, FootWasOnGround = true, FootLanding = false;
       int FootfallPositionRecordIsInitiated = 0;
       double FootfallPositionRecord[3] = {0};
