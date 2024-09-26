@@ -76,6 +76,9 @@ namespace DataFusion
   void SensorIMU::FurtherHandleXYZ2()
   {
     Est_InputZ[2] += 9.8;
+    ROS_MsgTest.DataCheckE[0] = Est_InputX[2];
+    ROS_MsgTest.DataCheckE[1] = Est_InputY[2];
+    ROS_MsgTest.DataCheckE[2] = Est_InputZ[2];
   }
 
   void SensorIMU::FurtherHandleRPY0()

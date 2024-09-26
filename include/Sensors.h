@@ -134,7 +134,7 @@ namespace DataFusion
       int JointDataOrder, FeetNumber;
       double LatestFeetEffort;
       double LatestJointAngle[3], LatestJointVelocity[3];
-      double FootEffortThreshold = 1;
+      double FootEffortThreshold = 60;
       bool FootIsOnGround = true, FootWasOnGround = true, FootLanding = false;
       int FootfallPositionRecordIsInitiated = 0;
       double FootfallPositionRecord[3] = {0};
