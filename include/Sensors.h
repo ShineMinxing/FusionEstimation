@@ -68,6 +68,7 @@ namespace DataFusion
         ROS_nh_FusionEstimator.getParam("fusion_estimator/urdf_CalfLengthName", Par_CalfLengthName);
         ROS_nh_FusionEstimator.getParam("fusion_estimator/urdf_FootLengthName", Par_FootLengthName);
         ROS_nh_FusionEstimator.getParam("fusion_estimator/Sensor_Signal_Source_1", SignalSourceTopic);
+        ROS_nh_FusionEstimator.getParam("fusion_estimator/FootForce_Threshold", FootEffortThreshold);
         ROS_sub_FusionEstimatorHip = ROS_nh_FusionEstimator.subscribe<FusionEstimator_Package_LowState>(SignalSourceTopic, 1, boost::bind(&SensorHip::HipCallback, this, _1));
         ROS_INFO("Hip subscribe from: %s", SignalSourceTopic.c_str());
 

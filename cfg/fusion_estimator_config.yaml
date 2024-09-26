@@ -13,8 +13,7 @@ fusion_estimator:
   urdf_ThighLengthName: "_KFE"
   urdf_CalfLengthName: "_fOOT_fixed_2"
   urdf_FootLengthName: "_FOOT_Dummy"
-  # urdf_file_name: "/resources/unitree_aliengo/urdf/aliengo_generated_edited.urdf"
-  # urdf_file_package: "ocs2_robotic_assets"
+  FootForce_Threshold: 1
   Sensor_Signal_Source_1: "/robot_description/anymal/low_state"
   Sensor_Signal_Source_2: "/odom"
   frequency: 400
